@@ -1,5 +1,5 @@
 
-public class NhanVien1 {
+public class NhanVien1 implements Comparable<NhanVien1>{
     private String maNV, hoTen, chucVu;
     private long luongCoBan, soNgayCong;
 
@@ -9,6 +9,10 @@ public class NhanVien1 {
         this.chucVu = chucVu;
         this.luongCoBan = luongCoBan;
         this.soNgayCong = soNgayCong;
+    }
+
+    public String getChucVu(){
+        return this.chucVu;
     }
     
     public int getPhuCap(){
@@ -25,8 +29,16 @@ public class NhanVien1 {
         }
         return 25000;
     }
+    public long getThuNhap(){
+        return this.luongCoBan * this.soNgayCong + this.getPhuCap();
+    }
     @Override
     public String toString(){
         return this.maNV + " " + this.hoTen + " " + this.getPhuCap() + " " + this.luongCoBan * this.soNgayCong + " " + this.getTamUng() + " " + (this.luongCoBan * this.soNgayCong + this.getPhuCap() - this.getTamUng());
+    }
+
+    @Override
+    public int compareTo(NhanVien1 o) {
+        return (int)(o.getThuNhap() - this.getThuNhap());
     }
 }
