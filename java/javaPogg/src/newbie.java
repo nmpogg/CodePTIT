@@ -1,5 +1,5 @@
-import java.util.Scanner;
-
+import java.util.*;
+import java.io.*;
 /*
 -Các kí tự từ a - z có mã ASCII từ 97-122
 -Các kí tự từ A - Z có mã ASCII từ 65-90
@@ -7,14 +7,10 @@ import java.util.Scanner;
 */
 
 public class newbie {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int max = 0, min = 0;
-        min = (n / 7) * 2;
-        n %= 7;
-        n %= 5;
-        max = min + n;
-        System.out.println(min + " " + max);
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        DataInputStream in = new DataInputStream(new FileInputStream("A.in"));
+        while(in.available() > 0){
+            
+        }
     }
 }
