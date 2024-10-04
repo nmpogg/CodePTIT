@@ -26,6 +26,9 @@ if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         p, q = map(int, input().split())
-        a = input()
-        b = input()
+        ds = list()
+        while len(ds) < 2:
+            res = list(map(str, input().split()))
+            ds += res
+        a, b = ds
         print(findMin(a, b, p, q), findMax(a, b, p, q))

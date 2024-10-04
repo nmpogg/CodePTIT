@@ -1,9 +1,9 @@
-a = set(lambda x : str(x).lower(), input().split())
-b = set(lambda x : str(x).lower(), input().split())
-c = a.union(b)
-d = a.intersection(b)
-for i in c:
+a = set(input().lower().split())
+b = set(input().lower().split())
+c = list(a.union(b))
+d = list(a.intersection(b))
+for i in sorted(c):
     print(i, end = ' ')
 print()
-for i in d:
+for i in sorted(d):
     print(i, end = ' ')

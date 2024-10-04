@@ -1,8 +1,6 @@
-s1 = list(input().split())
-s2 = list(input().split())
-idx = int(input()) - 1
-s1[idx:idx] = s2
-for i in range(len(s1)):
-    if i == idx + len(s2)-1: print(s1[i], end = '')
-    else:
-        print(s1[i], end = ' ')
+if __name__ == "__main__":
+    s1 = input()
+    s2 = input()
+    p = int(input()) - 1
+    ans = s1[:p] + s2 + s1[p:]
+    print(ans)
