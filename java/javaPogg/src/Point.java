@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +21,11 @@ public class Point{
     Point(Point p){
         this.x = p.x;
         this.y = p.y;
+    }
+    public static Point nextPoint(Scanner sc){
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        return new Point(a, b);
     }
     public double getX(){
         return x;

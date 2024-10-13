@@ -7,10 +7,10 @@ class WordSet{
     }
     
     public WordSet(String s){
+        String[] arr = s.split("\\s+");
         this.danhSach = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(s, " ");
-        while(st.hasMoreTokens()){
-            this.danhSach.add(s);
+        for(String x : arr){
+            this.danhSach.add(x.toLowerCase());
         }
     }
     public WordSet union(WordSet other){
@@ -21,19 +21,24 @@ class WordSet{
         for(String x : other.danhSach){
             set.add(x);
         }
-        WordSet ans = new WordSet();
-        ans.danhSach = new ArrayList<>(set);
-        return ans;
+        String tmp = "";
+        for(String x : set){
+            tmp += (x + " ");
+        }
+        return new WordSet(tmp.trim());
     }
     public WordSet intersection(WordSet other){
-        WordSet ans = new WordSet();
+        TreeSet<String> ds = new TreeSet<>();
         for(String x : this.danhSach){
             for(String y : other.danhSach){
-                if(x == y) ans.danhSach.add(x);
+                if(x.equals(y)) ds.add(x);
             }
         }
-        Collections.sort(ans.danhSach);
-        return ans;
+        String ans = "";
+        for(String x : ds){
+            ans += x + " ";
+        }
+        return new WordSet(ans.trim());
     }
     @Override
     public String toString(){
@@ -41,7 +46,7 @@ class WordSet{
         for(String x : this.danhSach){
             res += x + " ";
         }
-        return res;
+        return res.trim();
     }
 }
 
@@ -54,3 +59,7 @@ public class LopWordSet {
         System.out.println(s1.intersection(s2));
     }
 }
+/*
+Lap trinh huong doi tuong
+Ngon ngu lap trinh C++
+*/

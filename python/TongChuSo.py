@@ -1,14 +1,13 @@
-def sum(n):
+def sum(s):
     sum = 0
-    while n > 0:
-        sum += n % 10
-        n //= 10
-    return sum
+    for c in s:
+        sum += ord(c) - 48
+    return str(sum)
 
 if __name__ == "__main__":
-    n = int(input())
+    n = input()
     cnt = 0
-    while(n > 9):
+    while(len(n) > 1):
         cnt += 1
         n = sum(n)
     print(cnt)
