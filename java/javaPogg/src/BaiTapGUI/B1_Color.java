@@ -42,7 +42,7 @@ class Paint extends JFrame implements ActionListener{
 }
 public class B1_Color {
     public static void main(String[] args) {
-        Paint frame = new Paint("chao em nha");
+        Paint frame = new Paint("Vẽ Hình");
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
